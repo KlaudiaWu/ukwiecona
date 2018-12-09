@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+/*
+sass/
+|
+|– base/
+|   |– _reset.scss              # Reset/normalize
+|   |– _typography.scss         # Reguły dot. typografii
+|   …                           # Itd.
+|
+|– components/
+|   |– _buttons.scss            # Przyciski
+|   |– _carousel.scss           # Karuzela
+|   |– _cover.scss              # Okładka
+|   |– _dropdown.scss           # Rozwijane menu
+|   …                           # Itd.
+|
+|– layout/
+|   |– _navigation.scss         # Nawigacja
+|   |– _grid.scss               # Grid system
+|   |– _header.scss             # Nagłówek
+|   |– _footer.scss             # Stopka
+|   |– _forms.scss              # Formularze
+|   |- _section-contact.scss 
+|
+|– utils/
+|   |– _variables.scss          # Zmienne Sassa
+|   |– _functions.scss          # Funkcje Sassa
+|   |– _mixins.scss             # Mixiny Sassa
+|   |– _helpers.scss            # Pomocnicze klasy i selektory
+|
+|
+`– main.scss                    # Główny plik Sassa
+
+*/
+
+@import
+  "utils/functions",
+  "utils/mixins",
+  "utils/variables", 
+  "utils/helpers"; 
+
+@import 
+  "base/reset", 
+  "base/typography";

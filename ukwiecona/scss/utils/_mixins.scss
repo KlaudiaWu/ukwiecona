@@ -1,0 +1,12 @@
+
+/* Mixin for media query */
+@mixin rwd($device-width) { 
+  @if map-has-key($devices, $device-width) {
+    @media (min-width: #{map-get($devices, $device-width)}) {
+      @content;
+    }
+  } @else {
+    @warn "No value in `#{$devices}` map. ";
+  }
+}
+

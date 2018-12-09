@@ -1,0 +1,19 @@
+/* Font variables */
+$marc-script:  ('Marck Script', cursive);
+$play: ('Play', sans-serif);
+
+/* Devices width for media query mixin */
+
+$devices: (
+    'medium': 1024px,
+    'large': 1366px
+);
+
+/* Grid vertical rhythm from GRIDLOVER - font size scale factor about 1,618 */
+
+
+$font-sizes: (
+    'headers': 2em,
+    'mains': 1em,
+    'small-text': 0.5em 
+);
