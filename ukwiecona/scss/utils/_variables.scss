@@ -3,10 +3,14 @@ $marc-script:  ('Marck Script', cursive);
 $play: ('Play', sans-serif);
 
 /* Devices width for media query mixin */
-
 $devices: (
     'medium': 1024px,
     'large': 1366px
+);
+
+$root-font-sizes: (
+    'medium': 36px,
+    'large': 36px
 );
 
 /* Grid vertical rhythm from GRIDLOVER - font size scale factor about 1,618 */

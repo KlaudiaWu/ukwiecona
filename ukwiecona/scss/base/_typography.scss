@@ -1,42 +1,41 @@
 @import url('https://fonts.googleapis.com/css?family=Marck+Script|Play:400,700');
 
 body {
-    font-size: 18px;
-
-    @include rwd (large) {
-        font-size: 36px;
-    }
+  @include font-root;
 }
 
-
-
 //Teksty duże 2em czcionką marc script (36px/72px)
-h1 {
-
+h1.header-bar {
+  font-family: $marc-script;
+  @include vertical-rhythm(2em);
 }
 
 //Tytuł z taga czcionką marc script 1em
 h1.tag {
-
-}
-
-//Teksty główne 1em czcionką play (18px/36px)
-h2 {
-
+  font-family: $marc-script;
+  @include vertical-rhythm(1em);
 }
 
 //Paragraf z tekstem 'filtruj' marc script 1em
 p {
-
+  font-family: $play;
+  @include vertical-rhythm(1em);
 }
 
 //Tytuły w footerze czionką marc script
 h3 {
-
+  font-family: $marc-script;
 }
 
-//Teksty mniejsze 0.5em (9px/18)
-h4 {
+//Teksty główne 1em czcionką play (18px/36px)
+h2 {
+  font-family: $play;
+  @include vertical-rhythm(1em);
+}
 
+//Teksty mniejsze 0.5em (9px/18) czcionka play
+h4 {
+  font-family: $play;
+  @include vertical-rhythm(0.5em);
 }
 

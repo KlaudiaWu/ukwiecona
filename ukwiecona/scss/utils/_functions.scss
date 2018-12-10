@@ -1,0 +1,12 @@
+
+
+@mixin vertical-rhythm ($fontSize) {
+    $lineHeight: $fontSize/1em;
+    $marginTop: 1.5*$lineHeight;
+    $marginBottom: 0.5*$lineHeight;
+
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    margin-top: $marginTop;
+    margin-bottom: $marginBottom;
+} 

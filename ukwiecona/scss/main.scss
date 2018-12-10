@@ -10,6 +10,7 @@ sass/
 |
 |– components/
 |   |– _buttons.scss            # Przyciski
+|   |- _header-bar
 |   |– _carousel.scss           # Karuzela
 |   |– _cover.scss              # Okładka
 |   |– _dropdown.scss           # Rozwijane menu
@@ -43,3 +44,6 @@ sass/
 @import 
   "base/reset", 
   "base/typography";
+
+@import
+  "components/header-bar"
