@@ -1,5 +1,5 @@
 
-/* Mixin for media query */
+// Mixin for media query
 @mixin rwd($device-width) { 
   @if map-has-key($devices, $device-width) {
     @media (min-width: #{map-get($devices, $device-width)}) {
@@ -10,9 +10,19 @@
   }
 }
 
-/* Mixin for base font sizes for body */
+// Mixin for grid system 
+@mixin grid($columns) {
+  $page-width: 100vw;
+  $page-margins: 1%;
+  
+  width: calc(((#{$page-width}/12) * #{$columns}));
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+// Mixin for base font sizes for body
 @mixin font-root {
-  $fontSize: 18px;
+  $fontSize: 21px;
   font-size: $fontSize;
 
   @each $key, $value in $root-font-sizes {
@@ -22,14 +32,18 @@
   }  
 }
 
-/* Mixin for typography vertical rhythm   
-(gridlover.com for example determines font
-sizes for headings and on this page:
-https://24ways.org/2006/compose-to-a-vertical-rhythm/)
-are guidelines for gaps between lines
-or line height*/
+// Mixin for typography vertical rhythm   
+//(gridlover.com for example determines font
+//sizes for headings and on this page:
+//https://24ways.org/2006/compose-to-a-vertical-rhythm/)
+//are guidelines for gaps between lines
+//or line height
 @mixin vertical-rhythm ($fontSize) {
   $lineHeight: $fontSize/1em;
+
+  @if $lineHeight <= 1 {
+    $lineHeight: 1.2;
+  } 
   
   font-size: $fontSize;
   line-height: $lineHeight;
@@ -37,9 +51,49 @@ or line height*/
   $marginBottom: 0.5*$lineHeight;
 } 
 
-/* Shadow box for elements */
-@mixin shadow{
-  -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
-  -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
-  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+// Mixin for easy background image. Position are two number
+// values, and 'if' check if value are string or number.
+@mixin background-img ($img, $type, $position-x, $position-y, $size-x, $size-y) {
+  background-image: url('/img/#{$img}.#{$type}');
+  background-position: #{$position-x}vw #{$position-y}vh;
+
+  @if type-of($size-x) == string {
+    background-size:  #{$size-x} #{$size-y}vh;
+  } @else if type-of($size-y) == string  {
+    background-size:  #{$size-x}vw #{$size-y};
+  } @else {
+    background-size:  #{$size-x}vw #{$size-y}vh;
+  }
+} 
+
+// Mixin for centering elements. The parent of an element that we
+//what to center, must has display: flex;
+@mixin centerer($horizontal: true, $vertical: true, $direction: 'row') {
+  display: flex;
+  @if ($horizontal and $vertical) {
+    justify-content: center;
+    align-items: center;
+  } @else if ($horizontal) {
+    justify-content: center;
+  } @else if ($vertical) {
+    align-items: center;
+  }
+  @if ($direction) == 'row' {
+    flex-direction: row;
+  } @else {
+    flex-direction: column;
+  }
 }
+
+// Stitched effect and shadow
+@mixin stitched {
+  outline: 1px dashed;
+  outline-offset: -0.35em;
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+
+  @include rwd('medium' and 'large') {
+    outline-width: 1.75px;
+  }
+}
+
+

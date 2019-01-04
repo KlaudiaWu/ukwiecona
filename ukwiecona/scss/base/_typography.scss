@@ -5,7 +5,7 @@ body {
 }
 
 //Teksty duże 2em czcionką marc script (36px/72px)
-h1.header-bar {
+div.header-bar h1 {
   font-family: $marc-script;
   @include vertical-rhythm(2em);
 }
@@ -19,12 +19,17 @@ h1.tag {
 //Paragraf z tekstem 'filtruj' marc script 1em
 p {
   font-family: $play;
-  @include vertical-rhythm(1em);
+  @include vertical-rhythm(0.6em);
 }
 
 //Tytuły w footerze czionką marc script
 h3 {
   font-family: $marc-script;
+}
+
+h3.tag {
+  font-family: $play;
+  @include vertical-rhythm(0.6em);
 }
 
 //Teksty główne 1em czcionką play (18px/36px)
@@ -37,5 +42,10 @@ h2 {
 h4 {
   font-family: $play;
   @include vertical-rhythm(0.5em);
+}
+
+button {
+  font-family: $marc-script;
+  @include vertical-rhythm(1em);
 }
 

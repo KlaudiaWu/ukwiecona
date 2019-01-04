@@ -1,0 +1,182 @@
+
+.header.background {
+  height: 100vh;
+  
+  @include rwd(small) {
+    @include background-img (
+          'header-background', 'jpg', 
+          -88, 0,
+          'auto', 100);
+  }
+  @include rwd(medium) {
+    @include background-img (
+        'header-background', 'jpg', 
+         0, 0,
+        'auto', 100);
+  }
+  @include rwd(large) {
+    @include background-img (
+        'header-background', 'jpg', 
+         0, 0,
+        100, 100);
+  }
+}
+
+.header-tag {
+  height: 60vh;
+  @include rwd(large) {
+    height: 80vh;
+  }
+  @include rwd(medium) {
+    height: 85vh;
+  }
+}
+
+.logo {
+  width: 16vw;
+  height: auto;
+  margin-bottom: 2vh;
+
+  @include rwd(medium) {
+    width: 7vw;
+  }
+  @include rwd(large) {
+    width: 6vw;
+  }
+}
+
+.portrait-picture {
+  border-radius: 50%;
+  border: 0.5px solid black;
+  width: 25vw;
+  height: auto;
+  margin-bottom: 2vh;
+
+  @include rwd(medium) {
+    width: 12.5vw;
+    margin-bottom: 5vh;
+
+  }
+  @include rwd(large) {
+    width: 10vw;
+    margin-bottom: 5vh;
+
+  }
+}
+
+.tag-img {
+  
+  height: $tag-height;
+  width: $tag-width;
+  position: absolute;
+  right: $tag-position-r;
+  top: -2vh;
+
+  @include rwd (medium) {
+    $tag-height: 75vh;
+    height: $tag-height;
+    $tag-width: $tag-height/1.6;
+    width: $tag-width;
+    $tag-position-r: 10vh;
+    right: $tag-position-r;
+  }
+
+  @include rwd (large) {
+    // If you change $tag-height here, you must change it in header-tag-font on large
+    $tag-height: 75vh;
+    height: $tag-height;
+    $tag-width: $tag-height/1.6;
+    width: $tag-width;
+    $tag-position-r: 10vh;
+    right: $tag-position-r;
+  }
+
+}
+
+.header-tag-front {
+  $text-width: $tag-width - 8vh;
+  width: $text-width;
+  position: absolute;
+  text-align: center;
+  right: ($tag-width - $text-width)/2 + $tag-position-r;
+  top: 10.5vh;
+  
+  @include rwd (medium) {
+    $tag-height: 75vh;
+    $tag-width: $tag-height/1.6;
+    $tag-position-r: 10vh;
+    $text-width: $tag-width - 12vh;
+    width: $text-width;
+    right: ($tag-width - $text-width)/2 + $tag-position-r;
+    top: 13.5vh;
+  }
+
+  @include rwd (large) {
+    $tag-height: 75vh;
+    $tag-width: $tag-height/1.6;
+    $tag-position-r: 10vh;
+    $text-width: $tag-width - 12vh;
+    width: $text-width;
+    right: ($tag-width - $text-width)/2 + $tag-position-r;
+    top: 13.5vh;
+  }
+
+}
+
+.header-tag-back {
+  top: 5vh;
+  position: absolute;
+}
+
+.localization {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5vh;
+
+  img {
+    width: 3vw;
+    height: auto;
+    margin-right: 0.5vw;
+
+    @include rwd(medium) {
+      width: 1.5vw;
+    }
+    @include rwd(large) {
+      width: 1vw;
+    }
+  }
+
+  @include rwd(medium) {
+    margin-top: 14vh;
+  }
+  @include rwd(large) {
+    margin-top: 8.5vh;
+  }
+}
+
+
+.header-buttons {
+  @include centerer ($horizontal: false, $vertical: true, $direction: 'column');
+  height: 35vh;
+  position: relative;
+  bottom: -2vh;
+  justify-content: space-around;
+  @include rwd(large) {
+    @include centerer ($horizontal: false, $vertical: true, $direction: 'row');
+    height: 20vh;
+    bottom: 4vh;
+  }
+  @include rwd(medium) {
+    @include centerer ($horizontal: false, $vertical: true, $direction: 'row');
+    height: 15vh;
+    bottom: 4vh;
+  }
+}
+
+@keyframes tag-tilt {
+  0%   {transform: rotate(-15deg)}
+  33%  {transform: rotate(0deg)}
+  66% {transform: rotate(15deg)}
+  100% {transform: rotate(0deg)}
+}

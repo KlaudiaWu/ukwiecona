@@ -4,20 +4,20 @@ $play: ('Play', sans-serif);
 
 /* Devices width for media query mixin */
 $devices: (
+    'small': 300px,
     'medium': 1024px,
     'large': 1366px
 );
 
 $root-font-sizes: (
-    'medium': 36px,
+    'medium': 28px,
     'large': 36px
 );
 
+//Variables for tag position and text in header section
+$tag-height: 61vh;
+$tag-width: $tag-height/1.6;
+$text-width: $tag-width - 5vh;
+$tag-position-r: 5vh;
+
 /* Grid vertical rhythm from GRIDLOVER - font size scale factor about 1,618 */
-
-
-$font-sizes: (
-    'headers': 2em,
-    'mains': 1em,
-    'small-text': 0.5em 
-);

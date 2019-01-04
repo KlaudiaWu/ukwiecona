@@ -6,7 +6,7 @@ sass/
 |– base/
 |   |– _reset.scss              # Reset/normalize
 |   |– _typography.scss         # Reguły dot. typografii
-|   …                           # Itd.
+|   |- _root.scss
 |
 |– components/
 |   |– _buttons.scss            # Przyciski
@@ -22,6 +22,7 @@ sass/
 |   |– _header.scss             # Nagłówek
 |   |– _footer.scss             # Stopka
 |   |– _forms.scss              # Formularze
+|   |- _section-header
 |   |- _section-contact.scss 
 |
 |– utils/
@@ -29,7 +30,7 @@ sass/
 |   |– _functions.scss          # Funkcje Sassa
 |   |– _mixins.scss             # Mixiny Sassa
 |   |– _helpers.scss            # Pomocnicze klasy i selektory
-|
+|   
 |
 `– main.scss                    # Główny plik Sassa
 
@@ -43,7 +44,12 @@ sass/
 
 @import 
   "base/reset", 
-  "base/typography";
+  "base/typography",
+  "base/root";
 
 @import
-  "components/header-bar"
+  "components/buttons",
+  "components/header-bars";
+
+@import
+  "layout/section-header";
