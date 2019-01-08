@@ -58,11 +58,11 @@
   background-position: #{$position-x}vw #{$position-y}vh;
 
   @if type-of($size-x) == string {
-    background-size:  #{$size-x} #{$size-y}vh;
+    background-size:  #{$size-x} #{$size-y};
   } @else if type-of($size-y) == string  {
-    background-size:  #{$size-x}vw #{$size-y};
+    background-size:  #{$size-x} #{$size-y};
   } @else {
-    background-size:  #{$size-x}vw #{$size-y}vh;
+    background-size:  #{$size-x} #{$size-y};
   }
 } 
 

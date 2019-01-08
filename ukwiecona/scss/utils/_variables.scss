@@ -4,12 +4,14 @@ $play: ('Play', sans-serif);
 
 /* Devices width for media query mixin */
 $devices: (
-    'small': 300px,
+    'small': 250px,
+    'medium-small': 750px,
     'medium': 1024px,
     'large': 1366px
 );
 
 $root-font-sizes: (
+    'medium-small': 28px,
     'medium': 28px,
     'large': 36px
 );

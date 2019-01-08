@@ -1,47 +1,65 @@
 
+@keyframes tag-tilt {
+  0%   {transform: rotate(0); transform-origin: 50% 0;}
+  33%  {transform: rotate(15deg); transform-origin: 50% 0;}
+  66% {transform: rotate(-5deg); transform-origin: 50% 0;}
+  100% {transform: rotate(0); transform-origin: 50% 0;}
+}
+
 .header.background {
   height: 100vh;
   
-  @include rwd(small) {
+  @include rwd('small') {
     @include background-img (
           'header-background', 'jpg', 
           -88, 0,
-          'auto', 100);
+          'auto', '100vh');
   }
-  @include rwd(medium) {
+  @include rwd('medium-small') {
+    @include background-img (
+        'header-background', 'jpg', 
+         -50, 0,
+        auto, '100vh');
+  }
+  @include rwd('medium') {
     @include background-img (
         'header-background', 'jpg', 
          0, 0,
-        'auto', 100);
+        '100vw', '100vh');
   }
-  @include rwd(large) {
+  @include rwd('large') {
     @include background-img (
         'header-background', 'jpg', 
          0, 0,
-        100, 100);
+        '100vw', '100vh');
   }
 }
 
 .header-tag {
   height: 60vh;
-  @include rwd(large) {
+  @include rwd('medium-small') {
     height: 80vh;
   }
-  @include rwd(medium) {
+  @include rwd('medium') {
     height: 85vh;
+  }
+  @include rwd('large') {
+    height: 80vh;
   }
 }
 
 .logo {
   width: 16vw;
   height: auto;
-  margin-bottom: 2vh;
 
-  @include rwd(medium) {
+  @include rwd('medium-small') {
+    width: 12vw;
+  }
+  @include rwd('medium') {
     width: 7vw;
   }
-  @include rwd(large) {
-    width: 6vw;
+  @include rwd('large') {
+    width: 5.5vw;
   }
 }
 
@@ -52,87 +70,87 @@
   height: auto;
   margin-bottom: 2vh;
 
-  @include rwd(medium) {
+  @include rwd('medium') {
     width: 12.5vw;
     margin-bottom: 5vh;
 
   }
-  @include rwd(large) {
+  @include rwd('large') {
     width: 10vw;
     margin-bottom: 5vh;
 
   }
 }
 
-.tag-img {
-  
-  height: $tag-height;
-  width: $tag-width;
+
+.tag-container {
+  width: 62vw;
+  height: 60vh;
   position: absolute;
   right: $tag-position-r;
   top: -2vh;
 
+  @include background-img (
+        'tag', 'svg', 
+        0, -2,
+        '100%', 'auto');
+  background-repeat: no-repeat;
+  
+
+
+  @include rwd ('medium-small') {
+    height: 75vh;
+    width: 50vw;
+    right: 5vw;
+  }
+  @include rwd ('medium') {
+    height: 85vh;
+    width: 30vw;
+    right: 5vw;
+  }
+
+  @include rwd ('large') {
+    height: 80vh;
+    width: 25vw;
+    right: 8vw;
+  }
+
+  
+  animation-name: tag-tilt;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+
+}
+
+.header-tag-front, .header-tag-back {
+  position: absolute;
+  text-align: center;
+  top: 13vh;
+  margin: 0 5.25vw 0 5.25vw;
+  
   @include rwd (medium) {
-    $tag-height: 75vh;
-    height: $tag-height;
-    $tag-width: $tag-height/1.6;
-    width: $tag-width;
-    $tag-position-r: 10vh;
-    right: $tag-position-r;
+    top: 15vh;
+    margin: 0 2.5vw 0 2.5vw;
   }
 
   @include rwd (large) {
-    // If you change $tag-height here, you must change it in header-tag-font on large
-    $tag-height: 75vh;
-    height: $tag-height;
-    $tag-width: $tag-height/1.6;
-    width: $tag-width;
-    $tag-position-r: 10vh;
-    right: $tag-position-r;
+    top: 20vh;
+    margin: 0 2.5vw 0 2.5vw;
   }
 
 }
 
 .header-tag-front {
-  $text-width: $tag-width - 8vh;
-  width: $text-width;
-  position: absolute;
-  text-align: center;
-  right: ($tag-width - $text-width)/2 + $tag-position-r;
-  top: 10.5vh;
-  
-  @include rwd (medium) {
-    $tag-height: 75vh;
-    $tag-width: $tag-height/1.6;
-    $tag-position-r: 10vh;
-    $text-width: $tag-width - 12vh;
-    width: $text-width;
-    right: ($tag-width - $text-width)/2 + $tag-position-r;
-    top: 13.5vh;
-  }
-
   @include rwd (large) {
-    $tag-height: 75vh;
-    $tag-width: $tag-height/1.6;
-    $tag-position-r: 10vh;
-    $text-width: $tag-width - 12vh;
-    width: $text-width;
-    right: ($tag-width - $text-width)/2 + $tag-position-r;
-    top: 13.5vh;
+    top: 14vh
   }
-
-}
-
-.header-tag-back {
-  top: 5vh;
-  position: absolute;
 }
 
 .localization {
   flex-direction: row;
   display: flex;
   justify-content: center;
-  margin-top: 2.5vh;
+  margin-top: 2.5vw;
 
   img {
     width: 3vw;
@@ -148,10 +166,10 @@
   }
 
   @include rwd(medium) {
-    margin-top: 14vh;
+    margin-top: 5vw;
   }
   @include rwd(large) {
-    margin-top: 8.5vh;
+    margin-top: 3.5vw;
   }
 }
 
@@ -162,21 +180,21 @@
   position: relative;
   bottom: -2vh;
   justify-content: space-around;
-  @include rwd(large) {
+
+  @include rwd('medium-small') {
     @include centerer ($horizontal: false, $vertical: true, $direction: 'row');
     height: 20vh;
-    bottom: 4vh;
+    bottom: 0vh;
   }
-  @include rwd(medium) {
+  @include rwd('medium') {
     @include centerer ($horizontal: false, $vertical: true, $direction: 'row');
     height: 15vh;
-    bottom: 4vh;
+    bottom: 0vh;
+  }
+  @include rwd('large') {
+    @include centerer ($horizontal: false, $vertical: true, $direction: 'row');
+    height: 20vh;
+    bottom: 0vh;
   }
 }
 
-@keyframes tag-tilt {
-  0%   {transform: rotate(-15deg)}
-  33%  {transform: rotate(0deg)}
-  66% {transform: rotate(15deg)}
-  100% {transform: rotate(0deg)}
-}
