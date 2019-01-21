@@ -1,0 +1,80 @@
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.services-container {
+  @include grid(10);
+  position: relative;
+  
+  //I have to do media query for small, 
+  //because of the gaps in large devices
+  @include rwd('small') {
+    margin-top: $smaller-gap;
+    margin-bottom: $smaller-gap;
+  }
+  @include rwd('medium-small') {
+    @include grid(5);
+    margin-top: $smaller-gap;
+    margin-bottom: $smaller-gap;
+  }
+  @include rwd('medium') {
+    @include grid(4);
+    margin-top: $smaller-gap;
+    margin-bottom: $smaller-gap;
+  }
+  @include rwd('large') {
+    @include grid(3);
+  }
+}
+
+.services-circle {
+  border-radius: 50%;
+  overflow: hidden;
+  clip-path: circle(50% at 50% 50%);
+    img {
+      width: 105%;
+      height: auto; 
+  }
+}
+
+.services-banner {
+  position: absolute;
+  width: 100%;
+  bottom: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    h3{
+    position: absolute;    
+    }
+    img{
+      width: 100%;
+    }
+}
+
+.services-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #F2B9C6;
+    overflow: hidden;
+    border-radius: 50%;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+    h4 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;    
+    }
+  }
+  
+  .services-circle:hover .services-overlay {
+    height: 100%;
+  }
+  

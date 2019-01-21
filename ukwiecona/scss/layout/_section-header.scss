@@ -46,7 +46,14 @@
   @include rwd('large') {
     height: 80vh;
   }
+
+  perspective: 1000px;
 }
+
+.header-tag:hover .tag-container {
+  transform: rotateY(180deg);
+  transition: transform 0.5s;
+} 
 
 .logo {
   width: 16vw;
@@ -86,9 +93,9 @@
 .tag-container {
   width: 62vw;
   height: 60vh;
-  position: absolute;
   right: $tag-position-r;
   top: -2vh;
+  float: right;
 
   @include background-img (
         'tag', 'svg', 
@@ -120,6 +127,9 @@
   animation-duration: 5s;
   animation-iteration-count: 1;
 
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  position: relative;
 }
 
 .header-tag-front, .header-tag-back {
@@ -127,6 +137,7 @@
   text-align: center;
   top: 13vh;
   margin: 0 5.25vw 0 5.25vw;
+  transform: rotateX(0deg);
   
   @include rwd (medium) {
     top: 15vh;
@@ -138,12 +149,17 @@
     margin: 0 2.5vw 0 2.5vw;
   }
 
+  backface-visibility: hidden;
 }
 
 .header-tag-front {
   @include rwd (large) {
     top: 14vh
   }
+}
+
+.header-tag-back {
+  transform: rotateY(180deg);
 }
 
 .localization {

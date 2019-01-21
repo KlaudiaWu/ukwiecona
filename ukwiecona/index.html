@@ -10,6 +10,8 @@
     
     <title>Ukwiecona - kwiaty na każdą okazję</title>
 
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <link href="https://fonts.googleapis.com/css?family=Marck+Script|Play" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
@@ -29,7 +31,7 @@
                             <p>Warszawa</p>
                         </div>    
                     </div>
-                    <div class="header-tag-back"  style="display: none;"" >
+                    <div class="header-tag-back">
                         <img class="portrait-picture" alt="Agnieszka Wójciak" src="/img/agnieszka-wojciak.jpg">
                         <h1 class="tag">Agnieszka Wójciak</h1>
                         <h3 class="tag">Florystka z 18-letnim doświadczeniem. Ukończyła Szkołę Ogrodniczą. 
@@ -46,19 +48,108 @@
     </section>
     <section class="gallery">
         <div class="header-bar"><h1>Moje prace</h1></div>
-        <p>Poniżej znajdziesz kilka z moich prac. Uwieczniona została, niestety, 
+        <div class="description">
+            <h2>Poniżej znajdziesz kilka z moich prac. Uwieczniona została, niestety, 
             tylko mała część mojej 18-letniej pracy. Dotknij zdjęcie, jeżeli chcesz 
-            je powiększyć i zobaczyć inne z tego samego wydarzenia.</p>
+            je powiększyć i zobaczyć inne z tego samego wydarzenia.</h2>
+        </div>
     </section>
-    <section class="services">
+    <section>
         <div class="header-bar"><h1>Usługi</h1></div>
+        <div class="description">
+            <h2>Oferuję oprawę kwiaową ślubów i komunii, kompozycje kwioatowe na święta, 
+            wystrój sal oraz wszelkie kompozycje pogrzebowe. Jeżeli chcesz dowiedzieć się więcej,
+            najedź lub dotknij jeden z poniższych obrazków.</h2>
+        </div>    
+        <div class="services">
+            <div class="services-container">
+                <div class="services-circle">
+                    <img alt="Ślub" src="img/services-wedding.jpg">
+                    <div class="services-overlay">
+                        <h4>Lorem ipsum</h4>
+                    </div>
+                </div>
+                <div class="services-banner">
+                    <img alt="Usługi - Ślub" src="img/services-banner.svg">
+                    <h3>Ślub</h3>
+                </div>    
+            </div>
+            <div class="services-container">
+                <div class="services-circle">
+                    <img alt="Święta" src="img/services-holidays.jpg">
+                    <div class="services-overlay">
+                        <h4>Lorem ipsum</h4>
+                    </div>
+                </div>
+                <div class="services-banner">
+                    <img alt="Usługi - Święta" src="img/services-banner.svg">
+                    <h3>Święta</h3>
+                </div>    
+            </div>
+            <div class="services-container">
+                <div class="services-circle">
+                    <img alt="Urodziny" src="img/services-birthdays.jpg">
+                    <div class="services-overlay">
+                        <h4>Lorem ipsum</h4>
+                    </div>
+                </div>
+                <div class="services-banner">
+                    <img alt="Usługi - Urodziny" src="img/services-banner.svg">
+                    <h3>Urodziny</h3>
+                </div>    
+            </div>
+            <div class="services-container">
+                <div class="services-circle">
+                    <img alt="Komunie" src="img/services-communion.jpg">
+                    <div class="services-overlay">
+                        <h4>Lorem ipsum</h4>
+                    </div>
+                </div>
+                <div class="services-banner">
+                    <img alt="Usługi - Komunie" src="img/services-banner.svg">
+                    <h3>Komunie</h3>
+                </div>    
+            </div>
+            <div class="services-container">
+                <div class="services-circle">
+                    <img alt="Pogrzeb" src="img/services-funerals.jpg">
+                    <div class="services-overlay">
+                        <h4>Lorem ipsum</h4>
+                    </div>
+                </div>
+                <div class="services-banner">
+                    <img alt="Usługi - Pogrzeb" src="img/services-banner.svg">
+                    <h3>Smutniejsze okazje</h3>
+                </div>    
+            </div>
+        </div>    
     </section>
     <section class="contact">
         <div class="header-bar"><h1>Kontakt</h1></div>
-    </section>
-
-    
+        <div class="description">
+            <h2>Jeżeli masz jakieś pytania lub chcesz poprosić o wycenę - nie krępuj się :)
+            Bardzo mi pomoże, jeżeli podasz jak najwięcej szczegółów dotyczących okazji,
+            na którą potrzebujesz kwiaty.</h2>
+        </div>
+        <div class="contact-container">
+            <form>
+                <input type="text" name="email" placeholder="E-mail">
+                <input type="text" name="name" placeholder="Imię">
+                <input type="text" name="message-subject" placeholder="Temat wiadomości">
+                <select name="occaasion">
+                    <option value="Ślub">Ślub</option>
+                    <option value="Święta">Święta</option>
+                    <option value="Urodziny">Urodziny</option>
+                    <option value="Komunia">Komunia</option>
+                    <option value="Pogrzeb">Pogrzeb</option>
+                    <option value="Inna">Inna</option>
+                </select>
+                <textarea name="subject" placeholder="Treść wiadomości"></textarea>
+                <input type="submit" value="Wyślij">
+                <div class="g-recaptcha" data-sitekey="6Lf924oUAAAAAOVQsyXX7qyrXs9ndbOxgHKCOIsj"></div>
+            </form>
+        </div>    
+    </section>  
 
 </body>
-
 </html>

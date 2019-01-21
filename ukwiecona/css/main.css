@@ -36,7 +36,6 @@ sass/
 */
 /* Font variables */
 /* Devices width for media query mixin */
-/* Grid vertical rhythm from GRIDLOVER - font size scale factor about 1,618 */
 @import url("https://fonts.googleapis.com/css?family=Marck+Script|Play:400,700");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -155,6 +154,52 @@ button {
   line-height: 1.2;
 }
 
+.description {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 5vh;
+}
+
+.description h2 {
+  width: calc(((100vw/12) * 10));
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  text-align: center;
+}
+
+@media (min-width: 750px) {
+  .description h2 {
+    width: calc(((100vw/12) * 10));
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .description h2 {
+    width: calc(((100vw/12) * 8));
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+  }
+}
+
+@media (min-width: 1366px) {
+  .description h2 {
+    width: calc(((100vw/12) * 8));
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+  }
+}
+
 body {
   position: absolute;
   overflow-x: hidden;
@@ -163,11 +208,6 @@ body {
 section {
   width: 100vw;
   overflow-x: hidden;
-}
-
-section > :not(.header-bar) {
-  margin-left: 2.5vw;
-  margin-right: 2.5vw;
 }
 
 button {
@@ -245,11 +285,23 @@ div.header-bar {
   width: 105vw;
   position: relative;
   left: -2.5vw;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
 }
 
 @media (min-width: 1366px) {
   div.header-bar {
     outline-width: 1.75px;
+  }
+}
+
+input[name=email], input[name=name] {
+  width: 100%;
+}
+
+@media (min-width: 1366px) {
+  input[name=email], input[name=name] {
+    width: 50%;
   }
 }
 
@@ -345,6 +397,8 @@ div.header-bar {
 
 .header-tag {
   height: 60vh;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
 }
 
 @media (min-width: 750px) {
@@ -363,6 +417,15 @@ div.header-bar {
   .header-tag {
     height: 80vh;
   }
+}
+
+.header-tag:hover .tag-container {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
 .logo {
@@ -413,9 +476,9 @@ div.header-bar {
 .tag-container {
   width: 62vw;
   height: 60vh;
-  position: absolute;
   right: 5vh;
   top: -2vh;
+  float: right;
   background-image: url("/img/tag.svg");
   background-position: 0vw -2vh;
   background-size: 100% auto;
@@ -426,6 +489,13 @@ div.header-bar {
           animation-duration: 5s;
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: relative;
 }
 
 @media (min-width: 750px) {
@@ -457,6 +527,10 @@ div.header-bar {
   text-align: center;
   top: 13vh;
   margin: 0 5.25vw 0 5.25vw;
+  -webkit-transform: rotateX(0deg);
+          transform: rotateX(0deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 @media (min-width: 1024px) {
@@ -477,6 +551,11 @@ div.header-bar {
   .header-tag-front {
     top: 14vh;
   }
+}
+
+.header-tag-back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 
 .localization {
@@ -590,5 +669,120 @@ div.header-bar {
     height: 20vh;
     bottom: 0vh;
   }
+}
+
+.services {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.services-container {
+  width: calc(((100vw/12) * 10));
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  position: relative;
+}
+
+@media (min-width: 250px) {
+  .services-container {
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+  }
+}
+
+@media (min-width: 750px) {
+  .services-container {
+    width: calc(((100vw/12) * 5));
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-container {
+    width: calc(((100vw/12) * 4));
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+  }
+}
+
+@media (min-width: 1366px) {
+  .services-container {
+    width: calc(((100vw/12) * 3));
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+  }
+}
+
+.services-circle {
+  border-radius: 50%;
+  overflow: hidden;
+  -webkit-clip-path: circle(50% at 50% 50%);
+          clip-path: circle(50% at 50% 50%);
+}
+
+.services-circle img {
+  width: 105%;
+  height: auto;
+}
+
+.services-banner {
+  position: absolute;
+  width: 100%;
+  bottom: 8%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.services-banner h3 {
+  position: absolute;
+}
+
+.services-banner img {
+  width: 100%;
+}
+
+.services-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #F2B9C6;
+  overflow: hidden;
+  border-radius: 50%;
+  width: 100%;
+  height: 0;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+.services-overlay h4 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.services-circle:hover .services-overlay {
+  height: 100%;
 }
 /*# sourceMappingURL=main.css.map */

@@ -22,4 +22,6 @@ $tag-width: $tag-height/1.6;
 $text-width: $tag-width - 5vh;
 $tag-position-r: 5vh;
 
-/* Grid vertical rhythm from GRIDLOVER - font size scale factor about 1,618 */
+//Variable for gaps between elements
+$gap: 5vh;
+$smaller-gap: 2.5vh;

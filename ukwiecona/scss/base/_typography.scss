@@ -49,3 +49,23 @@ button {
   @include vertical-rhythm(1em);
 }
 
+.description {
+  width: 100%;
+  @include centerer ($horizontal: false, $vertical: true, $direction: 'column');
+  margin-bottom: $gap;
+
+  h2{
+    @include grid(10);
+    text-align: center;
+    
+    @include rwd('medium-small') {
+      @include grid(10);
+    }
+    @include rwd('medium') {
+      @include grid(8);
+    }
+    @include rwd('large') {
+      @include grid(8);
+    }
+  }
+}
