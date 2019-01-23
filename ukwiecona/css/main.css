@@ -120,7 +120,7 @@ h1.tag {
   line-height: 1.2;
 }
 
-p {
+p, a {
   font-family: "Play", sans-serif;
   font-size: 0.6em;
   line-height: 1.2;
@@ -128,6 +128,8 @@ p {
 
 h3 {
   font-family: "Marck Script", cursive;
+  font-size: 1em;
+  line-height: 1.2;
 }
 
 h3.tag {
@@ -151,6 +153,12 @@ h4 {
 button {
   font-family: "Marck Script", cursive;
   font-size: 1em;
+  line-height: 1.2;
+}
+
+input, textarea, select {
+  font-family: "Play", sans-serif;
+  font-size: 0.5em;
   line-height: 1.2;
 }
 
@@ -208,6 +216,11 @@ body {
 section {
   width: 100vw;
   overflow-x: hidden;
+}
+
+a {
+  color: initial;
+  text-decoration: none;
 }
 
 button {
@@ -295,14 +308,8 @@ div.header-bar {
   }
 }
 
-input[name=email], input[name=name] {
-  width: 100%;
-}
-
-@media (min-width: 1366px) {
-  input[name=email], input[name=name] {
-    width: 50%;
-  }
+div.header-bar.first {
+  margin-top: 0;
 }
 
 @-webkit-keyframes tag-tilt {
@@ -496,6 +503,11 @@ input[name=email], input[name=name] {
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   position: relative;
+}
+
+.tag-container div {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 
 @media (min-width: 750px) {
@@ -764,7 +776,7 @@ input[name=email], input[name=name] {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #F2B9C6;
+  background-color: #FFE6F0;
   overflow: hidden;
   border-radius: 50%;
   width: 100%;
@@ -784,5 +796,173 @@ input[name=email], input[name=name] {
 
 .services-circle:hover .services-overlay {
   height: 100%;
+}
+
+.contact-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-bottom: 5vh;
+}
+
+form {
+  width: calc(((100vw/12) * 10));
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+@media (min-width: 750px) {
+  form {
+    width: calc(((100vw/12) * 10));
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+  }
+}
+
+@media (min-width: 1024px) {
+  form {
+    width: calc(((100vw/12) * 8));
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+  }
+}
+
+@media (min-width: 1366px) {
+  form {
+    width: calc(((100vw/12) * 8));
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+  }
+}
+
+input[type=text], textarea, select {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 2vh;
+  border: 1.5px solid black;
+  border-radius: 10px;
+  margin: 1% 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: url("/img/arrow.svg") 98%/1.5% no-repeat white;
+}
+
+select ::-ms-expand {
+  display: none;
+  /* hide the default arrow in ie10 and ie11 */
+}
+
+input[type=submit] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: white;
+  border: 1.5px solid black;
+  border-radius: 10px;
+  margin-left: 2%;
+  cursor: pointer;
+}
+
+input[name=email], input[name=name] {
+  width: 100%;
+}
+
+@media (min-width: 1366px) {
+  input[name=email], input[name=name] {
+    width: 49%;
+  }
+}
+
+.submit-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 1%;
+}
+
+.submit-row div {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+}
+
+.submit-row input {
+  -webkit-box-flex: 7;
+      -ms-flex-positive: 7;
+          flex-grow: 7;
+  -ms-flex-preferred-size: 80%;
+      flex-basis: 80%;
+}
+
+.email-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer {
+  background-color: #FFE6F0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.footer-container {
+  width: calc(((100vw/12) * 10));
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.footer-paragraph {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.footer-paragraph h3 {
+  margin-bottom: 2.5vh;
 }
 /*# sourceMappingURL=main.css.map */

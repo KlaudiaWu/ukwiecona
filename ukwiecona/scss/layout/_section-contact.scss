@@ -1,0 +1,21 @@
+.contact-container {
+  @include centerer(true, false, 'row');
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: $gap;
+}
+
+form {
+    @include grid(10);
+
+    @include rwd('medium-small') {
+        @include grid(10);
+      }
+      @include rwd('medium') {
+        @include grid(8);
+      }
+      @include rwd('large') {
+        @include grid(8);
+      }
+}
+

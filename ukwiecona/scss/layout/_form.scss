@@ -1,0 +1,54 @@
+input[type=text], textarea, select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2vh;
+  border: 1.5px solid black;
+  border-radius: 10px;
+  margin: 1% 0;
+  appearance: none;
+  
+}
+
+select {
+  appearance: none;
+  ::-ms-expand { 
+    display: none; /* hide the default arrow in ie10 and ie11 */
+  }
+  background: url('/img/arrow.svg') 98% / 1.5% no-repeat white;
+}
+
+input[type=submit] {
+  appearance: none;
+  background: white;
+  border: 1.5px solid black;
+  border-radius: 10px;
+  margin-left: 2%;
+  cursor: pointer;
+}
+
+input[name=email], input[name=name] {
+  width: 100%;
+
+    @include rwd('large') {
+      width: 49%;
+    }
+}
+
+.submit-row {
+    display: flex;
+    margin-top: 1%;
+
+    div {
+        flex-grow: 1;
+        flex-basis: 20%;
+    }
+    input {
+        flex-grow: 7;
+        flex-basis: 80%;
+    }
+}
+
+.email-row {
+    display: flex;
+    justify-content: space-between;
+}

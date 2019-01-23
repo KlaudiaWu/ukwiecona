@@ -1,7 +1,0 @@
-input[name=email], input[name=name] {
-    width: 100%;
-
-    @include rwd('large') {
-        width: 50%;
-    }
-}

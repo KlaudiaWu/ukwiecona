@@ -49,10 +49,11 @@ sass/
 
 @import
   "components/buttons",
-  "components/header-bars",
-  "components/form";
+  "components/header-bars";
 
 @import
   "layout/section-header",
   "layout/section-services",
-  "layout/section-contact";
+  "layout/section-contact",
+  "layout/form",
+  "layout/footer";

@@ -1,0 +1,23 @@
+footer {
+    background-color: $pink;
+    @include centerer(true, false, 'row');
+}
+
+
+.footer-container {
+  @include grid(10);
+  padding-top: $gap;
+  padding-bottom: $gap;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-paragraph {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  h3 {
+    margin-bottom: $smaller-gap;
+  }
+} 

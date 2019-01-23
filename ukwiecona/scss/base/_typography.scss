@@ -17,7 +17,7 @@ h1.tag {
 }
 
 //Paragraf z tekstem 'filtruj' marc script 1em
-p {
+p, a {
   font-family: $play;
   @include vertical-rhythm(0.6em);
 }
@@ -25,6 +25,7 @@ p {
 //Tytuły w footerze czionką marc script
 h3 {
   font-family: $marc-script;
+  @include vertical-rhythm(1em)
 }
 
 h3.tag {
@@ -47,6 +48,11 @@ h4 {
 button {
   font-family: $marc-script;
   @include vertical-rhythm(1em);
+}
+
+input, textarea, select {
+  font-family: $play;
+  @include vertical-rhythm(0.5em);
 }
 
 .description {

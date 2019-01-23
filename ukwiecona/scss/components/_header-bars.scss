@@ -1,4 +1,4 @@
-div.header-bar {
+div.header-bar{
   @include centerer;
   @include stitched;
 
@@ -8,4 +8,8 @@ div.header-bar {
 
   margin-top: $gap;
   margin-bottom: $gap;
+}
+
+div.header-bar.first {
+  margin-top: 0;
 }

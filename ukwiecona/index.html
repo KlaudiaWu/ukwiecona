@@ -47,7 +47,7 @@
         </div>
     </section>
     <section class="gallery">
-        <div class="header-bar"><h1>Moje prace</h1></div>
+        <div class="header-bar first"><h1>Moje prace</h1></div>
         <div class="description">
             <h2>Poniżej znajdziesz kilka z moich prac. Uwieczniona została, niestety, 
             tylko mała część mojej 18-letniej pracy. Dotknij zdjęcie, jeżeli chcesz 
@@ -133,10 +133,13 @@
         </div>
         <div class="contact-container">
             <form>
-                <input type="text" name="email" placeholder="E-mail">
-                <input type="text" name="name" placeholder="Imię">
+                <div class="email-row">
+                    <input type="text" name="email" placeholder="E-mail">
+                    <input type="text" name="name" placeholder="Imię">
+                </div>
                 <input type="text" name="message-subject" placeholder="Temat wiadomości">
                 <select name="occaasion">
+                    <option value="0">Wybierz okazję</option>
                     <option value="Ślub">Ślub</option>
                     <option value="Święta">Święta</option>
                     <option value="Urodziny">Urodziny</option>
@@ -144,12 +147,31 @@
                     <option value="Pogrzeb">Pogrzeb</option>
                     <option value="Inna">Inna</option>
                 </select>
-                <textarea name="subject" placeholder="Treść wiadomości"></textarea>
-                <input type="submit" value="Wyślij">
-                <div class="g-recaptcha" data-sitekey="6Lf924oUAAAAAOVQsyXX7qyrXs9ndbOxgHKCOIsj"></div>
+                <textarea rows="5" placeholder="Treść wiadomości"></textarea>
+                <div class="submit-row">
+                    <div class="g-recaptcha" data-sitekey="6Lf924oUAAAAAOVQsyXX7qyrXs9ndbOxgHKCOIsj"></div>
+                    <input type="submit" value="Wyślij">
+                </div>
             </form>
         </div>    
-    </section>  
+    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-paragraph">
+                <h3>Skąd jestem?</h3>
+                <p>02-943 Warszawa</p>
+                <p>Polska</p>
+            </div>
+            <div class="footer-paragraph">
+                <h3>Mój adres email</h3>
+                <a href="mailto:agnieszka@ukwiecona.pl">agnieszka@ukwiecona.pl</a>
+            </div>
+            <div class="footer-paragraph">
+                <h3>Dzwoń do mnie</h3>
+                <a href="tel:604915651">604 915 651</a>
+            </div>
+        </div>
+    </footer>  
 
 </body>
 </html>
