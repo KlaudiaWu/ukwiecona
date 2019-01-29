@@ -47,10 +47,10 @@
     height: 80vh;
   }
 
-  perspective: 1000px;
+  perspective: 1500px;
 }
 
-.header-tag:hover .tag-container {
+.tag-container:hover {
   transform: rotateY(180deg);
   transition: transform 0.5s;
 } 
@@ -103,12 +103,18 @@
         '100%', 'auto');
   background-repeat: no-repeat;
 
+  animation-name: tag-tilt;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  position: relative;
   div {
     transform-style: preserve-3d;
   }
+
   
-
-
   @include rwd ('medium-small') {
     height: 75vh;
     width: 50vw;
@@ -125,15 +131,6 @@
     width: 25vw;
     right: 8vw;
   }
-
-  
-  animation-name: tag-tilt;
-  animation-duration: 5s;
-  animation-iteration-count: 1;
-
-  transition: transform 1s;
-  transform-style: preserve-3d;
-  position: relative;
 }
 
 .header-tag-front, .header-tag-back {
@@ -171,6 +168,7 @@
   display: flex;
   justify-content: center;
   margin-top: 2.5vw;
+  backface-visibility: hidden;
 
   img {
     width: 3vw;

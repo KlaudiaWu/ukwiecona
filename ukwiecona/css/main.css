@@ -404,8 +404,8 @@ div.header-bar.first {
 
 .header-tag {
   height: 60vh;
-  -webkit-perspective: 1000px;
-          perspective: 1000px;
+  -webkit-perspective: 1500px;
+          perspective: 1500px;
 }
 
 @media (min-width: 750px) {
@@ -426,7 +426,7 @@ div.header-bar.first {
   }
 }
 
-.header-tag:hover .tag-container {
+.tag-container:hover {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
   -webkit-transition: -webkit-transform 0.5s;
@@ -582,6 +582,8 @@ div.header-bar.first {
       -ms-flex-pack: center;
           justify-content: center;
   margin-top: 2.5vw;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .localization img {
