@@ -53,6 +53,25 @@
             tylko mała część mojej 18-letniej pracy. Dotknij zdjęcie, jeżeli chcesz 
             je powiększyć i zobaczyć inne z tego samego wydarzenia.</h2>
         </div>
+        <div class="gallery-background">
+            <div class="gallery-flter">
+                <span>Filtruj: </span>
+                <select name="gallery-filter">
+                    <option>Wszystkie</option>
+                    <option>Ślub</option>
+                    <option>Święta</option>
+                    <option>Urodziny</option>
+                    <option>Komunia</option>
+                    <option>Pogrzeb</option>
+                </select>
+            </div>
+            <div class="gallery-wrapper">
+                <div class="gallery-arrows">
+                    <img id="arrow-prev" class="back-arrow" src="img/gallery-arrow.svg">
+                    <img id="arrow-next" class="next-arrow" src="img/gallery-arrow.svg">
+                </div>
+            </div>
+        </div>
     </section>
     <section>
         <div class="header-bar"><h1>Usługi</h1></div>
@@ -71,7 +90,7 @@
                 </div>
                 <div class="services-banner">
                     <img alt="Usługi - Ślub" src="img/services-banner.svg">
-                    <h3>Ślub</h3>
+                    <h3 class="marc">Ślub</h3>
                 </div>    
             </div>
             <div class="services-container">
@@ -83,7 +102,7 @@
                 </div>
                 <div class="services-banner">
                     <img alt="Usługi - Święta" src="img/services-banner.svg">
-                    <h3>Święta</h3>
+                    <h3 class="marc">Święta</h3>
                 </div>    
             </div>
             <div class="services-container">
@@ -95,7 +114,7 @@
                 </div>
                 <div class="services-banner">
                     <img alt="Usługi - Urodziny" src="img/services-banner.svg">
-                    <h3>Urodziny</h3>
+                    <h3 class="marc">Urodziny</h3>
                 </div>    
             </div>
             <div class="services-container">
@@ -107,7 +126,7 @@
                 </div>
                 <div class="services-banner">
                     <img alt="Usługi - Komunie" src="img/services-banner.svg">
-                    <h3>Komunie</h3>
+                    <h3 class="marc">Komunie</h3>
                 </div>    
             </div>
             <div class="services-container">
@@ -119,7 +138,7 @@
                 </div>
                 <div class="services-banner">
                     <img alt="Usługi - Pogrzeb" src="img/services-banner.svg">
-                    <h3>Smutniejsze okazje</h3>
+                    <h3 class="marc">Smutniejsze okazje</h3>
                 </div>    
             </div>
         </div>    
@@ -158,19 +177,21 @@
     <footer>
         <div class="footer-container">
             <div class="footer-paragraph">
-                <h3>Skąd jestem?</h3>
+                <h3 class="marc">Skąd jestem?</h3>
                 <p>02-943 Warszawa</p>
                 <p>Polska</p>
             </div>
             <div class="footer-paragraph">
-                <h3>Mój adres email</h3>
+                <h3 class="marc">Mój adres email</h3>
                 <a href="mailto:agnieszka@ukwiecona.pl">agnieszka@ukwiecona.pl</a>
             </div>
             <div class="footer-paragraph">
-                <h3>Dzwoń do mnie</h3>
+                <h3 class="marc">Dzwoń do mnie</h3>
                 <a href="tel:604915651">604 915 651</a>
             </div>
         </div>
+        <script src="js/base.js" type="text/javascript"></script>
+        <script src="js/slider.js" type="text/javascript"></script>
     </footer>  
 
 </body>

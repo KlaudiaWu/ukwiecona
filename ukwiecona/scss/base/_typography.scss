@@ -22,13 +22,22 @@ p, a {
   @include vertical-rhythm(0.6em);
 }
 
+span {
+  font-family: $marc-script;
+  @include vertical-rhythm(1em);
+}
+
 //Tytuły w footerze czionką marc script
 h3 {
+  font-family: $play;
+  @include vertical-rhythm(1em)
+}
+h3.marc {
   font-family: $marc-script;
   @include vertical-rhythm(1em)
 }
 
-h3.tag {
+h3.tag  {
   font-family: $play;
   @include vertical-rhythm(0.6em);
 }

@@ -126,7 +126,19 @@ p, a {
   line-height: 1.2;
 }
 
+span {
+  font-family: "Marck Script", cursive;
+  font-size: 1em;
+  line-height: 1.2;
+}
+
 h3 {
+  font-family: "Play", sans-serif;
+  font-size: 1em;
+  line-height: 1.2;
+}
+
+h3.marc {
   font-family: "Marck Script", cursive;
   font-size: 1em;
   line-height: 1.2;
@@ -683,6 +695,116 @@ div.header-bar.first {
     height: 20vh;
     bottom: 0vh;
   }
+}
+
+.gallery-background {
+  background-image: url("/img/gallery-background.svg");
+  background-position: -10vw 0vh;
+  background-size: 120vw 100%;
+  background-repeat: no-repeat;
+  height: 115vh;
+  padding-top: 10vh;
+}
+
+.gallery-wrapper {
+  width: 100vw;
+  height: 80vh;
+  overflow: hidden;
+  padding: 2vw 0;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.card {
+  width: 27vw;
+  height: 80%;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+  padding: 1vw;
+  background-color: white;
+  position: absolute;
+  -webkit-transition: -webkit-transform 1s ease;
+  transition: -webkit-transform 1s ease;
+  transition: transform 1s ease;
+  transition: transform 1s ease, -webkit-transform 1s ease;
+}
+
+.control-elem {
+  width: 27vw;
+  height: 1px;
+}
+
+.gallery-img-wrapper {
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.gallery-img {
+  width: auto;
+  height: 100%;
+}
+
+.gallery-description {
+  padding: 1vw 0;
+}
+
+.gallery-arrows {
+  height: 12.5vh;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  z-index: 99;
+}
+
+.gallery-arrows .back-arrow, .gallery-arrows .next-arrow {
+  height: 100%;
+  margin: 0 1vw;
+}
+
+.gallery-arrows .next-arrow {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+.gallery-flter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.gallery-flter span {
+  margin-right: 1vw;
+}
+
+select[name=gallery-filter] {
+  width: 40%;
+  padding: 1.5vh;
 }
 
 .services {

@@ -1,0 +1,78 @@
+.gallery-background {
+  @include background-img ('gallery-background', 'svg', -10, 0, '120vw', '100%');
+  background-repeat: no-repeat;
+  height: 115vh;
+  padding-top: 10vh;
+}
+
+.gallery-wrapper {
+  width: 100vw;
+  height: 80vh;
+  overflow: hidden;
+  padding: 2vw 0;
+  position: relative;
+  display: flex;
+}
+
+.card {
+  width: $card-width;
+  height: 80%;
+  @include shadow;
+  padding: 1vw;
+  background-color: white;
+  position: absolute;
+  transition: transform 1s ease;
+}
+
+.control-elem {
+  width: $card-width;
+  height: 1px;
+}
+
+.gallery-img-wrapper {
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-img {
+  width: auto;
+  height: 100%;
+}
+
+.gallery-description {
+  padding: 1vw 0;
+}
+
+.gallery-arrows {
+  height: 12.5vh;
+  align-self: center;
+  flex-shrink: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 99;
+  .back-arrow, .next-arrow {
+    height: 100%;
+    margin: 0 1vw;
+  }
+  .next-arrow {
+    transform: scaleX(-1);
+  }
+}
+
+.gallery-flter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span {
+    margin-right: 1vw;
+  }
+}
+select[name=gallery-filter] {
+  width: 40%;
+  padding: 1.5vh;
+}
