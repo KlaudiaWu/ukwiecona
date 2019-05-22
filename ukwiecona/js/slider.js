@@ -1,25 +1,35 @@
 (function (gallery) {
 
+    var app = {};
+    app.started = false;
+    app.limit = 0;
+
     var container = document.body.getElementsByClassName("gallery-wrapper");
     var next = document.getElementById("arrow-next");
     var prev = document.getElementById("arrow-prev");
-    console.log(next);
-    console.log(prev);
+    //console.log(next);
+    //console.log(prev);
 
     var viewportWidth = window.innerWidth;
-    var percent;
 
     function controlElem() {
         var controlElem = document.createElement('div');
         controlElem.classList.add("control-elem");
         container[0].appendChild(controlElem);
         var controlWidth = document.getElementsByClassName("control-elem")[0].offsetWidth;
-        percent = controlWidth / viewportWidth * 100;
+        var percent = controlWidth / viewportWidth * 100;
 
-        return percent;
+        if (percent >= 50) {
+            limit = 5;
+        } else {
+            limit = 6;
+        }
+
+        return limit;
     }
 
-    controlElem();
+    app.limit = controlElem();
+    app.bufor = new Array(app.limit);
 
     function createCard(gallery) {
 
@@ -35,38 +45,43 @@
     var elements = new Array(gallery.length);
 
     function init(gallery) {
+        var prev = false;
         for (var i = 0; i < gallery.length; i++) {
             elements[i] = createCard(gallery[i]);
+            elements[i].prev = prev;
+            prev = elements[i];
+            if (elements[i].prev) {
+                elements[i].prev.next = elements[i];
+            }
+
+        }
+        elements[0].prev = elements[elements.length - 1];
+        elements[elements.length - 1].next = elements[0];
+        console.log(elements);
+//filter here
+        for (var l = 0; l < app.limit; l++) {
+            app.bufor[l] = elements[l];
         }
     }
 
 
     init(gallery);
 
-    var megaI = 0;
+    function appendCards() {
+        function appendToContainer(element, depth) {
+            if (depth === 0) return;
 
-    function appendCards(i) {
-        if (i === undefined) {
-            i = megaI;
+            container[0].appendChild(element);
+
+            appendToContainer(element.next, --depth);
         }
 
-        console.log(elements);
-
-        if (percent >= 50) {
-            for (var j = i; j < (i + 5); j++) {
-                container[0].appendChild(elements[j]);
-            }
-        } else {
-            for (var k = i; k < (i + 6); k++) {
-                container[0].appendChild(elements[k]);
-            }
-        }
+        appendToContainer(app.bufor[0], app.limit);
         positioning();
 
     }
 
     appendCards();
-
 
     function positioning() {
         //Muszę pobrać elementy, które utworzyłam
@@ -113,23 +128,24 @@
 
         }
 
-        next.addEventListener('click', (e) => {
-            console.log(cards);
-            var promises = new Array(cards.length);
-            for (var i = 0; i < cards.length; i++) {
-                var currentCard = cards[i];
-                // console.log(currentCard);
-                promises[i] = animation(currentCard);
-                // .then(() => {
-                //         //  currentCard.remove();
-                //         //console.log("kupA");
+        app.cards = cards;
 
-                // });
-            }
-            Promise.all(promises).then(() => {
-                appendCards(++megaI);
+        if (app.started === false) {
+            app.started = true;
+            next.addEventListener('click', (e) => {
+                console.log(app.cards);
+                var promises = new Array(app.cards.length);
+                for (var i = 0; i < app.cards.length; i++) {
+                    var currentCard = app.cards[i];
+                    currentCard.index = i;
+                    currentCard.increment = 1; // next = 1, prev = -1
+                    promises[i] = animation(currentCard);
+                }
+                Promise.all(promises).then(() => {
+                    appendCards();
+                });
             });
-        });
+        }
 
         function onAnimationComplete(currentCard, resolve) {
             // currentCard.removeEventListener('transitionend', function(){});
@@ -140,9 +156,15 @@
 
         function animation(currentCard) {
             return new Promise((resolve) => {
+                if (currentCard.increment > 0) {
+                    app.bufor[currentCard.index] = currentCard.next;
+                }
+                if (currentCard.increment < 0) {
+                    app.bufor[currentCard.index] = currentCard.prev;
+                }
                 currentCard.addEventListener('transitionend',
                     (e) => onAnimationComplete(currentCard, resolve),
-                    false);
+                    true);
                 currentCard.style.transform = "translateX(" + -distance + "px)";
             });
         }
