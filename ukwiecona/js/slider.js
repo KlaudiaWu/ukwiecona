@@ -56,46 +56,61 @@
         }
         elements[0].prev = elements[elements.length - 1];
         elements[elements.length - 1].next = elements[0];
-        //filter here
 
+        select.addEventListener('change', (e) => {
+            console.log(select.options[select.selectedIndex].value);
 
-        if (select.options[select.selectedIndex].value === occasions[0]) {
-            for (var l = 0; l < app.limit; l++) {
-                if(elements[l].originalNext) {
-                    elements[l].next = elements[l].originalNext;
-                } else if (elements[l].originalPrev) {
-                    elements[l].prev = elements[l].originalPrev;
-                }
-                app.bufor[l] = elements[l];
-            }
-        } else {
-            var filter = [];
-            prev = false;
-            for (i = 0; i < elements.length - 1; i++) {
-                if (select.options[select.selectedIndex].value.toLowerCase() === elements[i].getAttribute('data-occasion').toLowerCase()) {
-                    elements[i].originalNext = elements[i].next;
-                    elements[i].originalPrev = elements[i].prev;
-                    if (prev) {
-                        elements[i].prev = prev;
-                        prev.next = elements[i];
+            console.log(app.bufor.length);
+
+            app.bufor.forEach(element => {
+                element.remove();
+            });
+
+            var allOccasions = occasions[0].toLowerCase();
+            var selectedIndex = select.selectedIndex;
+            var selectedValue = select.options[selectedIndex].value.toLowerCase();
+
+            if (selectedValue === allOccasions) {
+                for (var l = 0; l < app.limit; l++) {
+                    if(elements[l].originalNext) {
+                        elements[l].next = elements[l].originalNext;
+                    } else if (elements[l].originalPrev) {
+                        elements[l].prev = elements[l].originalPrev;
                     }
-                    filter.push(elements[i]);
-                    prev = elements[i];
+                    app.bufor[l] = elements[l];
                 }
+            } else {
+                var filter = [];
+                prev = false;
+                for (i = 0; i < elements.length - 1; i++) {
+                    // console.log(select.options[select.selectedIndex].value);
+                    // console.log(elements[i].getAttribute('data-occasion'));
+                    if (selectedValue === elements[i].getAttribute('data-occasion').toLowerCase()) {
+                        elements[i].originalNext = elements[i].next;
+                        elements[i].originalPrev = elements[i].prev;
+                        if (prev) {
+                            elements[i].prev = prev;
+                            prev.next = elements[i];
+                        }
+                        filter.push(elements[i]);
+                        prev = elements[i];
+                    }
+                }
+                app.bufor = filter;
             }
-            app.bufor = filter;
-        }
+    
+            appendCards();
 
+        });
+
+        
     }
-
-
-    init(gallery);
 
     function appendCards() {
         function appendToContainer(element, depth) {
             if (depth === 0) return;
 
-            console.log(element);
+            //console.log(element);
             container[0].appendChild(element);
 
             appendToContainer(element.next, --depth);
@@ -109,6 +124,7 @@
 
     }
 
+    init(gallery);
     appendCards();
 
     function positioning() {
@@ -159,10 +175,7 @@
             }
 
         }
-
         app.cards = cards;
-
-
 
         function onClick1(element, direction) {
             element.addEventListener('click', (e) => {

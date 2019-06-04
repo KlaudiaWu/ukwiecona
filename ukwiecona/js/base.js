@@ -5,22 +5,23 @@ function GalleryElement(occassion, type, flowers, path) {
     this.path = path;
 }
 
-var el = new GalleryElement('Wiazanka', ['lilie', 'da'], 'jakas', 'slub');
-
-var occasions = {
-    0: "Wszystkie",
-    1: "ślub",
-    2: "święta",
-    3: "urodziny",
-    4: "komunia",
-    5: "pogrzeb"
-};
+var occasions = [
+    "wszystkie",
+    "ślub",
+    "święta",
+    "urodziny",
+    "komunia",
+    "pogrzeb"
+];
 
 var select = document.getElementsByClassName('gallery-filter')[0];
 
-for (var i = 0; i<occasions.length-1; i++) {
+console.log(occasions);
+
+for (var i = 0; i<occasions.length; i++) {
+    console.log("Kupa");
     var option = document.createElement('option');
-    option.value = i;
+    option.value = occasions[i];
     option.innerHTML = occasions[i];
     select.appendChild(option);
 }
