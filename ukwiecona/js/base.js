@@ -19,7 +19,6 @@ var select = document.getElementsByClassName('gallery-filter')[0];
 console.log(occasions);
 
 for (var i = 0; i<occasions.length; i++) {
-    console.log("Kupa");
     var option = document.createElement('option');
     option.value = occasions[i];
     option.innerHTML = occasions[i];

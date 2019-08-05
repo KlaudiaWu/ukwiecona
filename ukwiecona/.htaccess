@@ -1,0 +1,4 @@
+Header set Access-Control-Allow-Origin 'https://ukwiecona.pl http://ukwiecona.pl'
+RewriteEngine On
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://ukwiecona.pl/$1 [R,L]

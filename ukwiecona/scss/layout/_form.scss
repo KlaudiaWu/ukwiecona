@@ -52,3 +52,21 @@ input[name=email], input[name=name] {
     display: flex;
     justify-content: space-between;
 }
+
+#error-message {
+  padding: 20px;
+  margin-bottom: 2vh;
+  width: 80%;
+  text-align: center;
+  background-color: red; 
+  display: none;
+}
+
+#success-message {
+  padding: 20px;
+  margin-bottom: 2vh;
+  width: 80%;
+  text-align: center;
+  background-color: green; 
+  display: none;
+}

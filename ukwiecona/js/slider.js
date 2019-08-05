@@ -57,6 +57,15 @@
         elements[0].prev = elements[elements.length - 1];
         elements[elements.length - 1].next = elements[0];
 
+        for (var l = 0; l < app.limit; l++) {
+            if(elements[l].originalNext) {
+                elements[l].next = elements[l].originalNext;
+            } else if (elements[l].originalPrev) {
+                elements[l].prev = elements[l].originalPrev;
+            }
+            app.bufor[l] = elements[l];
+        }
+
         select.addEventListener('change', (e) => {
             console.log(select.options[select.selectedIndex].value);
 
@@ -129,7 +138,7 @@
 
     function positioning() {
         //Muszę pobrać elementy, które utworzyłam
-        var cards = Array.from(document.body.getElementsByClassName("card"));
+        var cards = Array.from(document.body.getElementsByClassName("card")); // should be replaced with app.bufor
         //Istnieją 2 opcje - albo będą widoczne 2 pełne karty i 2 kawałki 
         //(dla kart o szerokości poniżej 50%) lub 1 karta pełna i 2 części 
         //(dla kart o szerokości 50% i więcej)
