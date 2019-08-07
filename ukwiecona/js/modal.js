@@ -23,14 +23,6 @@ function checkIndex(e) {
     //captionText.innerHTML = this.alt;
 }
 
-// console.log(imgs[elem]);
-
-// imgs[elem].onclick = function(){
-
-//     modal.style.display = "block";
-//     modalImg.src = imgs[elem].src;
-//     //captionText.innerHTML = this.alt;
-// }
 
 
 // Get the <span> element that closes the modal
