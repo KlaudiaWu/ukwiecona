@@ -186,6 +186,7 @@ input, textarea, select {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-top: 5vh;
   margin-bottom: 5vh;
 }
 
@@ -310,8 +311,6 @@ div.header-bar {
   width: 105vw;
   position: relative;
   left: -2.5vw;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
 }
 
 @media (min-width: 1366px) {
@@ -322,6 +321,118 @@ div.header-bar {
 
 div.header-bar.first {
   margin-top: 0;
+}
+
+/* Style the Image Used to Trigger the Modal */
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#myImg:hover {
+  opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+  -webkit-animation-name: zoom;
+          animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
+  }
 }
 
 @-webkit-keyframes tag-tilt {
@@ -402,7 +513,7 @@ div.header-bar.first {
   .header.background {
     background-image: url("/img/header-background.jpg");
     background-position: 0vw 0vh;
-    background-size: 100vw 100vh;
+    background-size: 100vw auto;
   }
 }
 
@@ -410,7 +521,7 @@ div.header-bar.first {
   .header.background {
     background-image: url("/img/header-background.jpg");
     background-position: 0vw 0vh;
-    background-size: 100vw 100vh;
+    background-size: 100vw auto;
   }
 }
 
@@ -698,17 +809,42 @@ div.header-bar.first {
 }
 
 .gallery-background {
-  background-image: url("/img/gallery-background.svg");
-  background-position: -10vw 0vh;
-  background-size: 120vw 100%;
+  background-image: url("/img/flowers-orchid.jpg");
+  background-position: 0vw 0vh;
+  background-size: auto 100%;
   background-repeat: no-repeat;
-  height: 115vh;
-  padding-top: 10vh;
+}
+
+@media (min-width: 750px) {
+  .gallery-background {
+    background-image: url("/img/flowers-orchid.jpg");
+    background-position: 0vw 0vh;
+    background-size: 100% 100%;
+    height: 60vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-background {
+    background-image: url("/img/flowers-orchid.jpg");
+    background-position: 0vw 0vh;
+    background-size: 100% 100%;
+    height: 80vh;
+  }
+}
+
+@media (min-width: 1366px) {
+  .gallery-background {
+    background-image: url("/img/flowers-orchid.jpg");
+    background-position: 0vw 0vh;
+    background-size: 100% 100%;
+    height: auto;
+  }
 }
 
 .gallery-wrapper {
   width: 100vw;
-  height: 80vh;
+  height: 65vh;
   overflow: hidden;
   padding: 2vw 0;
   position: relative;
@@ -717,12 +853,30 @@ div.header-bar.first {
   display: flex;
 }
 
+@media (min-width: 750px) {
+  .gallery-wrapper {
+    height: 60vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-wrapper {
+    height: 80vh;
+  }
+}
+
+@media (min-width: 1366px) {
+  .gallery-wrapper {
+    height: 80vh;
+  }
+}
+
 .card {
-  width: 27vw;
-  height: 80%;
+  width: 65vw;
+  height: 90%;
   -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
           box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
-  padding: 1vw;
+  padding: 2vw;
   background-color: white;
   position: absolute;
   -webkit-transition: -webkit-transform 1s ease;
@@ -731,9 +885,51 @@ div.header-bar.first {
   transition: transform 1s ease, -webkit-transform 1s ease;
 }
 
+@media (min-width: 750px) {
+  .card {
+    width: 50vw;
+    height: 90%;
+    padding: 1.5vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card {
+    width: 27vw;
+    height: 80%;
+    padding: 1vw;
+  }
+}
+
+@media (min-width: 1366px) {
+  .card {
+    width: 27vw;
+    height: 80%;
+    padding: 1vw;
+  }
+}
+
 .control-elem {
-  width: 27vw;
+  width: 65vw;
   height: 1px;
+}
+
+@media (min-width: 750px) {
+  .control-elem {
+    width: 50vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .control-elem {
+    width: 27vw;
+  }
+}
+
+@media (min-width: 1366px) {
+  .control-elem {
+    width: 27vw;
+  }
 }
 
 .gallery-img-wrapper {
@@ -757,7 +953,25 @@ div.header-bar.first {
 }
 
 .gallery-description {
-  padding: 1vw 0;
+  padding: 10% 0;
+}
+
+@media (min-width: 750px) {
+  .gallery-description {
+    padding: 2vw 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-description {
+    padding: 1vw 0;
+  }
+}
+
+@media (min-width: 1366px) {
+  .gallery-description {
+    padding: 1vw 0;
+  }
 }
 
 .gallery-arrows {
@@ -786,25 +1000,23 @@ div.header-bar.first {
           transform: scaleX(-1);
 }
 
-.gallery-flter {
+.filter-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.gallery-flter span {
-  margin-right: 1vw;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  padding: 2% 0;
 }
 
 select[name=gallery-filter] {
   width: 40%;
   padding: 1.5vh;
+  margin-left: 1vw;
 }
 
 .services {
@@ -937,7 +1149,14 @@ select[name=gallery-filter] {
       flex-wrap: wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  margin-bottom: 5vh;
+  padding-bottom: 5vh;
+}
+
+.contact-background {
+  background-image: url("/img/flowers-gallery.jpg");
+  background-position: 0vw -20vh;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
 }
 
 form {
@@ -1067,7 +1286,6 @@ input[name=email], input[name=name] {
 }
 
 footer {
-  background-color: #FFE6F0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1078,6 +1296,17 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  outline: 1px dashed;
+  outline-offset: -0.35em;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 1366px) {
+  footer {
+    outline-width: 1.75px;
+  }
 }
 
 .footer-container {

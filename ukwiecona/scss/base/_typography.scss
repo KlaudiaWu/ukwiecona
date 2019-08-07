@@ -67,6 +67,7 @@ input, textarea, select {
 .description {
   width: 100%;
   @include centerer ($horizontal: false, $vertical: true, $direction: 'column');
+  padding-top: $gap;
   margin-bottom: $gap;
 
   h2{

@@ -1,31 +1,78 @@
 .gallery-background {
-  @include background-img ('gallery-background', 'svg', -10, 0, '120vw', '100%');
+  @include background-img ('flowers-orchid', 'jpg', 0, 0, 'auto', '100%');
   background-repeat: no-repeat;
-  height: 115vh;
-  padding-top: 10vh;
+
+  @include rwd('medium-small'){
+    @include background-img ('flowers-orchid', 'jpg', 0, 0, '100%', '100%');
+    height: 60vh;
+  }
+  @include rwd('medium') {
+    @include background-img ('flowers-orchid', 'jpg', 0, 0, '100%', '100%');
+    height: 80vh;
+  }
+  @include rwd('large') {
+    @include background-img ('flowers-orchid', 'jpg', 0, 0, '100%', '100%');
+    height: auto;
+  }
 }
 
 .gallery-wrapper {
   width: 100vw;
-  height: 80vh;
+  height: 65vh;
   overflow: hidden;
   padding: 2vw 0;
   position: relative;
   display: flex;
+
+  @include rwd('medium-small'){
+    height: 60vh;
+  }
+  @include rwd('medium') {
+    height: 80vh;
+  }
+  @include rwd('large') {
+    height: 80vh;
+  }
 }
 
 .card {
-  width: $card-width;
-  height: 80%;
+  width: 65vw;
+  height: 90%;
   @include shadow;
-  padding: 1vw;
+  padding: 2vw;
   background-color: white;
   position: absolute;
   transition: transform 1s ease;
+
+  @include rwd('medium-small'){
+    width: 50vw;
+    height: 90%;
+    padding: 1.5vw;
+  }
+  @include rwd('medium') {
+    width: 27vw;
+    height: 80%;
+    padding: 1vw;
+  }
+  @include rwd('large') {
+    width: 27vw;
+    height: 80%;
+    padding: 1vw;
+  }
 }
 
 .control-elem {
-  width: $card-width;
+  width: 65vw;
+
+  @include rwd('medium-small'){
+    width: 50vw;
+  }
+  @include rwd('medium') {
+    width: 27vw;
+  }
+  @include rwd('large') {
+    width: 27vw;
+  }
   height: 1px;
 }
 
@@ -44,7 +91,16 @@
 }
 
 .gallery-description {
-  padding: 1vw 0;
+  padding: 10% 0;
+  @include rwd('medium-small'){
+    padding: 2vw 0;
+  }
+  @include rwd('medium') {
+    padding: 1vw 0;
+  }
+  @include rwd('large') {
+    padding: 1vw 0;
+  }
 }
 
 .gallery-arrows {
@@ -63,16 +119,14 @@
     transform: scaleX(-1);
   }
 }
-
-.gallery-flter {
+.filter-wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
-  span {
-    margin-right: 1vw;
-  }
+  align-items: baseline;
+  padding: 2% 0;
 }
 select[name=gallery-filter] {
   width: 40%;
   padding: 1.5vh;
+  margin-left: 1vw;
 }

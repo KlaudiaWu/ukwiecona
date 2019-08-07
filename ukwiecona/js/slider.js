@@ -143,18 +143,17 @@
         //(dla kart o szerokości poniżej 50%) lub 1 karta pełna i 2 części 
         //(dla kart o szerokości 50% i więcej)
         var width = cards[0].offsetWidth;
-        var widthVw = width / viewportWidth * 100;
         var first, distance, space, partialView;
 
-        if (widthVw >= 50) {
+        if (window.matchMedia('(max-width: 1023px)').matches === true) {
             //Obliczenia dla różnicy między pozycją kolejnych elementów przy
             //rozmieszczeniu dla 3 kart w widoku (ostatnia karta to ta pierwsza
             //z minusową wartością).
-            space = viewportWidth * 0.1;
+            space = viewportWidth * 0.07;
             partialView = (viewportWidth - (width + (2 * space))) / 2;
             distance = width + space;
             first = -width + partialView - distance;
-        } else {
+        } else if (window.matchMedia('(min-width: 1024px)').matches === true) {
             //Obliczenia dla różnicy między pozycją kolejnych elementów przy
             //rozmieszczeniu dla 4 kart w widoku (ostatnia karta to ta pierwsza
             //z minusową wartością) oraz pozycji pierwszej karty od lewej strony.

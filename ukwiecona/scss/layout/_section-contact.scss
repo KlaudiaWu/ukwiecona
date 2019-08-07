@@ -2,7 +2,12 @@
   @include centerer(true, false, 'row');
   flex-wrap: wrap;
   justify-content: space-around;
-  margin-bottom: $gap;
+  padding-bottom: $gap;
+}
+
+.contact-background {
+  @include background-img ('flowers-gallery', 'jpg', 0, -20, '100%', 'auto');
+  background-repeat: no-repeat;
 }
 
 form {
