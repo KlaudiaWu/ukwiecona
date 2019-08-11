@@ -10,21 +10,21 @@
   
   //I have to do media query for small, 
   //because of the gaps in large devices
-  @include rwd('small') {
+  @include rwd('small-p', 'p') {
     margin-top: $smaller-gap;
     margin-bottom: $smaller-gap;
   }
-  @include rwd('medium-small') {
+  @include rwd('small-l', 'l') {
     @include grid(5);
     margin-top: $smaller-gap;
     margin-bottom: $smaller-gap;
   }
-  @include rwd('medium') {
+  @include rwd('medium-p', 'p') {
     @include grid(4);
     margin-top: $smaller-gap;
     margin-bottom: $smaller-gap;
   }
-  @include rwd('large') {
+  @include rwd('large', 'l') {
     @include grid(3);
   }
 }

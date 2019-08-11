@@ -1,8 +1,18 @@
 
 // Mixin for media query
-@mixin rwd($device-width) { 
+@mixin rwd($device-width, $orientation) { 
   @if map-has-key($devices, $device-width) {
-    @media (min-width: #{map-get($devices, $device-width)}) {
+    @media (min-width: #{map-get($devices, $device-width)}) and (orientation: #{map-get($orientations, $orientation)}){
+      @content;
+    }
+  } @else {
+    @warn "No value in `#{$devices}` map. ";
+  }
+}
+
+@mixin rwd-t($device-width) { 
+  @if map-has-key($devices-t, $device-width) {
+    @media (min-width: #{map-get($devices-t, $device-width)}) {
       @content;
     }
   } @else {
@@ -26,7 +36,7 @@
   font-size: $fontSize;
 
   @each $key, $value in $root-font-sizes {
-    @include rwd ($key) {
+    @include rwd-t ($key) {
       font-size: $value;
     } 
   }  
@@ -96,7 +106,10 @@
   outline-offset: -0.35em;
   @include shadow;
 
-  @include rwd('medium' and 'large') {
+  @include rwd('medium', 'l') {
+    outline-width: 1.75px;
+  }
+  @include rwd('large', 'l'){
     outline-width: 1.75px;
   }
 }

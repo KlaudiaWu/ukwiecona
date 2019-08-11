@@ -74,13 +74,13 @@ input, textarea, select {
     @include grid(10);
     text-align: center;
     
-    @include rwd('medium-small') {
+    @include rwd('medium-l', 'l') {
       @include grid(10);
     }
-    @include rwd('medium') {
+    @include rwd('medium-p',  'p') {
       @include grid(8);
     }
-    @include rwd('large') {
+    @include rwd('large', 'l') {
       @include grid(8);
     }
   }

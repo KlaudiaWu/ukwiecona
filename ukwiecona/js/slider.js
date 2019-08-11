@@ -1,5 +1,8 @@
 (function (gallery) {
 
+    //Page load on resize
+    window.onresize = function(){ location.reload(); }
+
     var app = {};
     app.started = false;
     app.limit = 0;

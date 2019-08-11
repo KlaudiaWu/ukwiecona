@@ -13,16 +13,19 @@ button {
   height: 10vh;
   @include grid(10);
   
-
-  @include rwd('medium-small') {
+  @include rwd('small-l', 'l') {
     @include grid(3);
     height: 9vh;
   }
-  @include rwd('medium') {
+  @include rwd('medium-p', 'p') {
+    @include grid(3);
+    height: 9vh;
+  }
+  @include rwd('medium-l', 'l') {
     @include grid(3);
     height: 12vh;
   }
-  @include rwd('large') {
+  @include rwd('large-l', 'l') {
     @include grid(3);
     height: 12vh;
   }

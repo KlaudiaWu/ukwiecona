@@ -13,13 +13,13 @@
 form {
     @include grid(10);
 
-    @include rwd('medium-small') {
+    @include rwd('small-l', 'l') {
         @include grid(10);
       }
-      @include rwd('medium') {
+      @include rwd('medium-p', 'p') {
         @include grid(8);
       }
-      @include rwd('large') {
+      @include rwd('large-l', 'l') {
         @include grid(8);
       }
 }

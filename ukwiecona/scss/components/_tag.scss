@@ -1,0 +1,97 @@
+.header-tag {
+    width: 65%;
+    height: 60%;
+    perspective: 1500px;
+    align-self: flex-end;
+    margin-right: 10%;
+    transform: rotate(5deg);
+
+    @include rwd("large", 'l') {
+      width: 25%;
+      height: 80%;
+    }
+  }
+  
+  .tag-container:hover {
+    transform: rotateY(180deg);
+    transition: transform 0.5s;
+  } 
+  
+  
+  .portrait-picture {
+    border-radius: 50%;
+    border: 0.5px solid black;
+    width: 50%;
+    height: auto;
+    margin-bottom: 5%;
+  }
+  
+  
+  .tag-container {
+    @include background-img (
+        'tag', 'svg', 
+        0, -2,
+        '100%', 'auto');
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    /*CSS for animation of tag */
+    background-repeat: no-repeat;
+    animation-name: tag-tilt;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    position: relative;
+
+    div.tag-wrapper {
+      height: 80%;
+      width: 90%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+  }
+  
+  .header-tag-front, .header-tag-back {
+    width: 85%;
+    height: 100%;
+    position: absolute;
+    transform: rotateX(0deg);
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .tag {
+    margin: 5% 0;
+  }
+  
+  .header-tag-back {
+    transform: rotateY(180deg);
+  }
+  
+  .localization {
+    backface-visibility: hidden;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+
+    img {
+      width: 25px;
+      margin-right: 2.5%;
+    }
+  
+  }

@@ -29,7 +29,7 @@ input[type=submit] {
 input[name=email], input[name=name] {
   width: 100%;
 
-    @include rwd('large') {
+    @include rwd('large-l', 'l') {
       width: 49%;
     }
 }

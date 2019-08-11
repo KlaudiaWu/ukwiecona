@@ -2,15 +2,15 @@
   @include background-img ('flowers-orchid', 'jpg', 0, 0, 'auto', '100%');
   background-repeat: no-repeat;
 
-  @include rwd('medium-small'){
+  @include rwd('small-l', 'l'){
     @include background-img ('flowers-orchid', 'jpg', 0, 0, '100%', '100%');
     height: 60vh;
   }
-  @include rwd('medium') {
+  @include rwd('medium-p', 'p') {
     @include background-img ('flowers-orchid', 'jpg', 0, 0, '100%', '100%');
     height: 80vh;
   }
-  @include rwd('large') {
+  @include rwd('large', 'l') {
     @include background-img ('flowers-orchid', 'jpg', 0, 0, '100%', '100%');
     height: auto;
   }
@@ -24,13 +24,13 @@
   position: relative;
   display: flex;
 
-  @include rwd('medium-small'){
+  @include rwd('small-l', 'l'){
     height: 60vh;
   }
-  @include rwd('medium') {
+  @include rwd('medium-p', 'p') {
     height: 80vh;
   }
-  @include rwd('large') {
+  @include rwd('large', 'l') {
     height: 80vh;
   }
 }
@@ -44,19 +44,19 @@
   position: absolute;
   transition: transform 1s ease;
 
-  @include rwd('medium-small'){
+  @include rwd('small-l', 'l'){
     width: 50vw;
     height: 90%;
     padding: 1.5vw;
   }
-  @include rwd('medium') {
+  @include rwd('medium-p', 'p') {
     width: 27vw;
     height: 80%;
     padding: 1vw;
   }
-  @include rwd('large') {
+  @include rwd('large', 'l') {
     width: 27vw;
-    height: 80%;
+    height: 82%;
     padding: 1vw;
   }
 }
@@ -64,13 +64,13 @@
 .control-elem {
   width: 65vw;
 
-  @include rwd('medium-small'){
+  @include rwd('small-l', 'l'){
     width: 50vw;
   }
-  @include rwd('medium') {
+  @include rwd('medium-p', 'p') {
     width: 27vw;
   }
-  @include rwd('large') {
+  @include rwd('large', 'l') {
     width: 27vw;
   }
   height: 1px;
@@ -78,7 +78,7 @@
 
 .gallery-img-wrapper {
   width: 100%;
-  height: 50%;
+  height: 45%;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -88,17 +88,18 @@
 .gallery-img {
   width: 100%;
   height: auto;
+  min-height: 100%;
 }
 
 .gallery-description {
   padding: 10% 0;
-  @include rwd('medium-small'){
+  @include rwd('small-l', 'l'){
     padding: 2vw 0;
   }
-  @include rwd('medium') {
+  @include rwd('medium-p', 'p') {
     padding: 1vw 0;
   }
-  @include rwd('large') {
+  @include rwd('large', 'l') {
     padding: 1vw 0;
   }
 }
